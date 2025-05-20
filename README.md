@@ -2,36 +2,36 @@
 
 ![Capi Info Bot Logo](https://raw.githubusercontent.com/yourusername/capi-info-bot/main/logo.png)
 
-Capi Info Bot, Telegram üzerinde medya dosyalarınızın EXIF, dosya sistemi metadata, detaylı teknik metadata ve hash bilgilerini hızlıca elde etmenizi sağlayan güçlü bir Telegram botudur.
+**Capi Info Bot**, Telegram üzerinde medya dosyalarınızın EXIF, dosya sistemi metadata, detaylı teknik metadata ve hash bilgilerini kolayca almanızı sağlayan şık ve hızlı bir bottur.
 
 ---
 
 ## 📌 Özellikler
 
-* 🔍 **EXIF Bilgileri**: Fotoğraf ve görsellerin kameraya özel meta verilerini (Make, Model, LensModel, ExposureTime vb.) çıkarır.
-* 🗃️ **Teknik Metadata**: `hachoir` kütüphanesi ile video, belgeler ve diğer dosyaların derinlemesine teknik bilgisini çeker.
-* 🔒 **Hash Hesaplama**: SHA256 ve MD5 hash değerlerini hesaplayarak dosya bütünlüğünü doğrular.
-* 🌐 **Konum Desteği**: EXIF GPS verilerini okuyup Google Maps linki oluşturur.
-* ⚙️ **Kolay Kurulum**: Python ve gerekli kütüphanelerle birkaç adımda aktif edin.
-* ✨ **Asenkron İşlem**: `asyncio` ile hızlı ve sorunsuz medya işlemleri.
+* 🔍 **EXIF Bilgileri**: Make, Model, LensModel, ExposureTime, FNumber ve daha fazlasını çıkarır.
+* 🗃️ **Teknik Metadata**: `hachoir` ile video, belge ve diğer dosyalara dair derinlemesine bilgi sağlar.
+* 🔒 **Hash Hesaplama**: SHA256 ve MD5 hash değerleriyle dosya bütünlüğünü onaylar.
+* 🌐 **Konum Desteği**: GPS verilerini okuyup anında Google Maps bağlantısı oluşturur.
+* ✨ **Asenkron İşlem**: `asyncio` desteğiyle hızlı ve kesintisiz işlem süreci.
+* ⚙️ **Kolay Kurulum**: Basit adımlarla hemen çalışır hale gelir.
 
 ---
 
 ## 📥 Kurulum
 
-1. Depoyu klonlayın:
+1. Repo’yu klonlayın:
 
    ```bash
    git clone https://github.com/yourusername/capi-info-bot.git
    cd capi-info-bot
    ```
-2. Sanal ortam oluşturma (isteğe bağlı):
+2. (İsteğe bağlı) Sanal ortam oluşturup aktif edin:
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # Windows: venv\\Scripts\\activate
+   source venv/bin/activate  # Windows: venv\Scripts\activate
    ```
-3. Gerekli paketleri yükleyin:
+3. Gereksinimleri yükleyin:
 
    ```bash
    pip install -r requirements.txt
@@ -41,70 +41,72 @@ Capi Info Bot, Telegram üzerinde medya dosyalarınızın EXIF, dosya sistemi me
 
 ## ⚙️ Yapılandırma
 
-Ayarlar `index.py` dosyasında yer alır. Botu kendi bilgilerinle çalıştırmak için aşağıdaki değişkenleri `index.py` içinde güncelleyin:
+Tüm ayarlar `index.py` dosyasında bulunur. Aşağıdaki değişkenleri kendi değerlerinizle güncelleyin:
 
-| Değişken    | Açıklama                |
-| ----------- | ----------------------- |
-| `API_ID`    | Telegram API ID’niz     |
-| `API_HASH`  | Telegram API Hash’ınız  |
-| `BOT_TOKEN` | Telegram Bot Token’ınız |
-| `VERSION`   | Bot sürüm bilgisi       |
+| Değişken    | Açıklama                  |
+| ----------- | ------------------------- |
+| `API_ID`    | Telegram API ID’niz       |
+| `API_HASH`  | Telegram API Hash’ınız    |
+| `BOT_TOKEN` | Telegram Bot Token’ınız   |
+| `VERSION`   | Bot sürümü (örn. '1.5.5') |
 
-Örnek ayarlar (`index.py` içinden):
+**Örnek `index.py`:**
 
 ```python
-API_ID = 23350184
-API_HASH = '41f0c2a157268e158f91ab7d59f4fc19'
+API_ID    = 23350184
+API_HASH  = '41f0c2a157268e158f91ab7d59f4fc19'
 BOT_TOKEN = '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'
-VERSION = '1.5.5'
-```
-
-\---------------|--------------------------|
-\| `API_ID`      | Telegram API ID’niz      |
-\| `API_HASH`    | Telegram API Hash’ınız   |
-\| `BOT_TOKEN`   | Telegram Bot Token’ınız  |
-\| `VERSION`     | Bot sürüm bilgisi        |
-
-Örnek `.env`:
-
+VERSION   = '1.5.5'
 ```
 
 ---
 
 ## 🚀 Kullanım
 
-1. Botu başlatın:
+1. Botu çalıştırın:
 
    ```bash
-   python bot.py
+   python index.py
    ```
-2. Telegram’dan botunuza `/start` komutunu gönderin.
-3. Fotoğraf, video veya belge gönderin.
-4. Bot size detaylı metadata ve hash bilgilerini gönderir.
+2. Telegram’da botunuza `/start` gönderin.
+3. Fotoğraf, video veya belge paylaşın.
+4. Bot size tüm metadata ve hash bilgilerini gönderir.
 
 ### 🎛️ Komutlar
 
-| Komut    | Açıklama                       |
-| -------- | ------------------------------ |
-| `/start` | Başlatma mesajını gösterir     |
-| `/help`  | Yardım metnini tekrar gönderir |
+| Komut    | Açıklama                                            |
+| -------- | --------------------------------------------------- |
+| `/start` | Botu başlatır ve hoş geldiniz mesajı gösterir       |
+| `/help`  | Komut listesini ve kullanım bilgisini tekrar yollar |
 
 ---
 
 ## 🤝 Katkıda Bulunma
 
-1. Fork’layın 🔱
-2. Yeni bir branch açın: `git checkout -b feature/isim`
-3. Değişikliklerinizi commit edin: `git commit -m 'Yeni özellik ekle'`
-4. Push edin: `git push origin feature/isim`
-5. Pull request açın 📨
+1. Reposu fork’layın ⭐️
+2. Yeni bir branch açın:
+
+   ```bash
+   git checkout -b feature/yenilik
+   ```
+3. Değişikliklerinizi commit edin:
+
+   ```bash
+   git commit -m 'Yeni özellik ekle'
+   ```
+4. Branch’i push’layın:
+
+   ```bash
+   git push origin feature/yenilik
+   ```
+5. Pull request açın 📣
 
 ---
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
 
 ---
 
-> **Not:** 🚧 Herhangi bir sorun, öneri veya geri bildirim için [issues](https://github.com/yourusername/capi-info-bot/issues) bölümüne yazabilirsiniz. 🎉
+> \:bulb: Sorun mu var? [Issues sayfasına](https://github.com/yourusername/capi-info-bot/issues) bekleriz! 🎉
