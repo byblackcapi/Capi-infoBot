@@ -1,6 +1,6 @@
 # 🚀 Capi Info Bot v1.5.5
 
-![Capi Info Bot Logo](https://raw.githubusercontent.com/yourusername/capi-info-bot/main/logo.png)
+![Capi Info Bot Logo](https://https://github.com/byblackcapi/Capi-infoBot/blob/main/infobot.png)
 
 **Capi Info Bot**, Telegram üzerinde medya dosyalarınızın EXIF, dosya sistemi metadata, detaylı teknik metadata ve hash bilgilerini kolayca almanızı sağlayan şık ve hızlı bir bottur.
 
