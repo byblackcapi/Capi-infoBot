@@ -22,7 +22,7 @@
 1. Repo’yu klonlayın:
 
    ```bash
-   git clone https://github.com/yourusername/capi-info-bot.git
+   git clone https://github.com/byblackcapi/Capi-infoBot.git
    cd capi-info-bot
    ```
 2. (İsteğe bağlı) Sanal ortam oluşturup aktif edin:
