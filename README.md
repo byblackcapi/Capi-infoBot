@@ -1,96 +1,110 @@
-# Capi Info Bot 🚀
+# 🚀 Capi Info Bot v1.5.5
 
-![Python](https://img.shields.io/badge/python-3.7%2B-blue) ![Version](https://img.shields.io/badge/version-1.5.5-green)
+![Capi Info Bot Logo](https://raw.githubusercontent.com/yourusername/capi-info-bot/main/logo.png)
 
-**Capi Info Bot** Telegram üzerinden gönderdiğiniz medya dosyalarınızın EXIF ve teknik metadata bilgilerini hızlıca çıkarmanızı sağlayan bir bottur.
+Capi Info Bot, Telegram üzerinde medya dosyalarınızın EXIF, dosya sistemi metadata, detaylı teknik metadata ve hash bilgilerini hızlıca elde etmenizi sağlayan güçlü bir Telegram botudur.
 
 ---
 
-## Özellikler
+## 📌 Özellikler
 
-* 📸 **EXIF Bilgileri**: Fotoğraflarınızın kamera markası, model, çekim zamanı, enstantane, diyafram, ISO ve daha fazlasını gösterir.
-* 🌍 **GPS Konumu**: EXIF içindeki GPS bilgileri varsa enlem ve boylam değerlerini alır, Google Maps bağlantısı sunar.
-* 🔒 **Hash Hesaplama**: Dosyanızın SHA256 ve MD5 hash değerlerini hesaplar.
-* 🗃️ **Teknik Metadata**: `hachoir` kütüphanesi ile medya dosyalarının detaylı teknik metadata bilgilerini alır.
-* ⚙️ **Otomatik Temizleme**: İşlem sonrası geçici dosyaları temizler.
-* 🔄 **Asenkron İşlem**: Hızlı ve kesintisiz kullanıcı deneyimi için tüm işlemler asenkron olarak yürütülür.
+* 🔍 **EXIF Bilgileri**: Fotoğraf ve görsellerin kameraya özel meta verilerini (Make, Model, LensModel, ExposureTime vb.) çıkarır.
+* 🗃️ **Teknik Metadata**: `hachoir` kütüphanesi ile video, belgeler ve diğer dosyaların derinlemesine teknik bilgisini çeker.
+* 🔒 **Hash Hesaplama**: SHA256 ve MD5 hash değerlerini hesaplayarak dosya bütünlüğünü doğrular.
+* 🌐 **Konum Desteği**: EXIF GPS verilerini okuyup Google Maps linki oluşturur.
+* ⚙️ **Kolay Kurulum**: Python ve gerekli kütüphanelerle birkaç adımda aktif edin.
+* ✨ **Asenkron İşlem**: `asyncio` ile hızlı ve sorunsuz medya işlemleri.
 
-## Gereksinimler
+---
 
-* Python 3.7 veya üzeri
-* Telegram bot hesabı (Bot Token)
-* Aşağıdaki Python paketleri:
+## 📥 Kurulum
 
-  ```bash
-  pip install telethon pillow piexif exifread hachoir
-  ```
-
-## Kurulum
-
-1. Bu depoyu klonlayın:
+1. Depoyu klonlayın:
 
    ```bash
-   git clone https://github.com/<kullanici_adiniz>/capi-info-bot.git
+   git clone https://github.com/yourusername/capi-info-bot.git
    cd capi-info-bot
    ```
-2. Sanal ortam oluşturun ve etkinleştirin (isteğe bağlı):
+2. Sanal ortam oluşturma (isteğe bağlı):
 
    ```bash
    python3 -m venv venv
-   source venv/bin/activate  # Linux/macOS
-   venv\\Scripts\\activate   # Windows
+   source venv/bin/activate  # Windows: venv\\Scripts\\activate
    ```
 3. Gerekli paketleri yükleyin:
 
    ```bash
    pip install -r requirements.txt
    ```
-4. `config.py` dosyasını oluşturun ve aşağıdaki değerleri düzenleyin:
-
-   ```python
-   API_ID = 23350184
-   API_HASH = '41f0c2a157268e158f91ab7d59f4fc19'
-   BOT_TOKEN = '7619515923:AAGlzmlklTqP3OXH-tgbdR3KHVEnwP0BZqc'
-   ```
-
-## Kullanım
-
-```bash
-python bot.py
-```
-
-Telegram’da botunuzu başlatın ve aşağıdaki komutları kullanın:
-
-* `/start` - Botu başlatır ve giriş mesajını gönderir.
-* `/help`  - Yardım metnini gösterir.
-* **Medya Gönderme** - Fotoğraf, video veya belge gönderin; bot metadata bilgilerini size iletir.
-
-İşlem adımları:
-
-1. Dosyanız indiriliyor.
-2. EXIF bilgileri taranıyor.
-3. Hash ve dosya sistemi metadata hazırlanıyor.
-4. `hachoir` ile teknik analiz yapılıyor.
-5. Sonuçlar size mesaj veya `.txt` dosyası olarak gönderiliyor.
-
-## Özelleştirme
-
-* `VERSION` değişkenini güncelleyerek bot sürümünü takip edebilirsiniz.
-* `stages` listesinde yer alan yükleme mesajlarını ihtiyacınıza göre değiştirebilirsiniz.
-* Çıktı formatını `process_media` fonksiyonunda düzenleyerek farklı bilgileri ekleyebilir veya çıkarabilirsiniz.
-
-## Katkıda Bulunma
-
-1. Fork’layın.
-2. Yeni bir branch oluşturun: `git checkout -b feature/yenilik`.
-3. Değişikliklerinizi commit edin: `git commit -m 'Yeni özellik eklemesi'`.
-4. Branch’e push edin: `git push origin feature/yenilik`.
-5. Pull request oluşturun.
-
-## Lisans
-
-Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için [LICENSE](LICENSE) dosyasına bakınız.
 
 ---
 
-> **Not:** API kimlik bilgilerinizi herkese açık bir repoda paylaşmamaya dikkat edin! `config.py` dosyasını `.gitignore` dosyanıza eklemeniz önerilir.
+## ⚙️ Yapılandırma
+
+Ayarlar `index.py` dosyasında yer alır. Botu kendi bilgilerinle çalıştırmak için aşağıdaki değişkenleri `index.py` içinde güncelleyin:
+
+| Değişken    | Açıklama                |
+| ----------- | ----------------------- |
+| `API_ID`    | Telegram API ID’niz     |
+| `API_HASH`  | Telegram API Hash’ınız  |
+| `BOT_TOKEN` | Telegram Bot Token’ınız |
+| `VERSION`   | Bot sürüm bilgisi       |
+
+Örnek ayarlar (`index.py` içinden):
+
+```python
+API_ID = 23350184
+API_HASH = '41f0c2a157268e158f91ab7d59f4fc19'
+BOT_TOKEN = '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'
+VERSION = '1.5.5'
+```
+
+\---------------|--------------------------|
+\| `API_ID`      | Telegram API ID’niz      |
+\| `API_HASH`    | Telegram API Hash’ınız   |
+\| `BOT_TOKEN`   | Telegram Bot Token’ınız  |
+\| `VERSION`     | Bot sürüm bilgisi        |
+
+Örnek `.env`:
+
+```
+
+---
+
+## 🚀 Kullanım
+
+1. Botu başlatın:
+
+   ```bash
+   python bot.py
+   ```
+2. Telegram’dan botunuza `/start` komutunu gönderin.
+3. Fotoğraf, video veya belge gönderin.
+4. Bot size detaylı metadata ve hash bilgilerini gönderir.
+
+### 🎛️ Komutlar
+
+| Komut    | Açıklama                       |
+| -------- | ------------------------------ |
+| `/start` | Başlatma mesajını gösterir     |
+| `/help`  | Yardım metnini tekrar gönderir |
+
+---
+
+## 🤝 Katkıda Bulunma
+
+1. Fork’layın 🔱
+2. Yeni bir branch açın: `git checkout -b feature/isim`
+3. Değişikliklerinizi commit edin: `git commit -m 'Yeni özellik ekle'`
+4. Push edin: `git push origin feature/isim`
+5. Pull request açın 📨
+
+---
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
+
+---
+
+> **Not:** 🚧 Herhangi bir sorun, öneri veya geri bildirim için [issues](https://github.com/yourusername/capi-info-bot/issues) bölümüne yazabilirsiniz. 🎉
