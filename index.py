@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 # API Configs
 API_ID = 23350184
 API_HASH = '41f0c2a157268e158f91ab7d59f4fc19'
-BOT_TOKEN = 'token is hree'
+BOT_TOKEN = '7619515923:AAGlzmlklTqP3OXH-tgbdR3KHVEnwP0BZqc'
 VERSION = "1.5.5"
 
 # Initialize bot
