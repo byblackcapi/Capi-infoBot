@@ -109,4 +109,4 @@ Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
 
 ---
 
-> \:bulb: Sorun mu var? [Issues sayfasına](https://github.com/yourusername/capi-info-bot/issues) bekleriz! 🎉
+> \:bulb: Sorun mu var? [Issues sayfasına](https://github.com/byblackcapi/capi-info-bot/issues) bekleriz! 🎉
